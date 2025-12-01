@@ -6,29 +6,29 @@
 
 ## 📋 Table of Contents
 
-1. [Overview](#-overview)
-2. [Placeholder Conventions](#-placeholder-conventions)
-3. [Public URLs](#-public-urls)
-4. [URL Parameters](#-url-parameters)
-5. [Feed Endpoints (Atom/RSS)](#-feed-endpoints-atomrss)
-6. [Blogger API v3](#-blogger-api-v3)
-7. [Authentication & Authorization](#-authentication--authorization)
-8. [Media/Asset URLs](#-mediaasset-urls)
-9. [Internal Dashboard URLs](#-internal-dashboard-urls)
-10. [Comment System](#-comment-system)
-11. [Template Engine Data-Tags](#-template-engine-data-tags)
-12. [Widget & Integration URLs](#-widget--integration-urls)
-13. [Mobile & Specialized URLs](#-mobile--specialized-urls)
-14. [SEO & Metadata URLs](#-seo--metadata-urls)
-15. [Domain Behavior](#-domain-behavior)
-16. [Legacy URLs](#-legacy-urls)
-17. [Error Pages & Status](#-error-pages--status)
-18. [JavaScript API & Widgets](#-javascript-api--widgets)
-19. [Cross-Origin & Security](#-cross-origin--security)
-20. [Tools & Utilities](#-tools--utilities)
-21. [Known Limitations](#-known-limitations)
-22. [Contributing](#-contributing)
-23. [License](#-license)
+1. [Overview](#overview)
+2. [Placeholder Conventions](#placeholder-conventions)
+3. [Public URLs](#public-urls)
+4. [URL Parameters](#url-parameters)
+5. [Feed Endpoints (Atom/RSS)](#feed-endpoints-atomrss)
+6. [Blogger API v3](#blogger-api-v3)
+7. [Authentication & Authorization](#authentication--authorization)
+8. [Media/Asset URLs](#mediaasset-urls)
+9. [Internal Dashboard URLs](#internal-dashboard-urls)
+10. [Comment System](#comment-system)
+11. [Template Engine Data-Tags](#template-engine-data-tags)
+12. [Widget & Integration URLs](#widget--integration-urls)
+13. [Mobile & Specialized URLs](#mobile--specialized-urls)
+14. [SEO & Metadata URLs](#seo--metadata-urls)
+15. [Domain Behavior](#domain-behavior)
+16. [Legacy URLs](#legacy-urls)
+17. [Error Pages & Status](#error-pages--status)
+18. [JavaScript API & Widgets](#javascript-api--widgets)
+19. [Cross-Origin & Security](#cross-origin--security)
+20. [Tools & Utilities](#tools--utilities)
+21. [Known Limitations](#known-limitations)
+22. [Contributing](#contributing)
+23. [License](#license)
 
 ---
 
@@ -86,7 +86,7 @@ All examples use these placeholders:
 ## 🌐 Public URLs
 
 ### Blog Home
-```markdown
+
 **Standard:** `https://{blogUrl}/`
 **Mobile:** `https://{blogUrl}/?m=1`
 **Print View:** `https://{blogUrl}/?view=print`
@@ -98,10 +98,10 @@ All examples use these placeholders:
 - `?view=sidebar`      # Sidebar view
 - `?view=snapshot`     # Snapshot view
 - `?view=timeslide`    # Timeslide view
-```
+
 
 ### Posts
-```markdown
+
 **Standard Format:**
 `https://{blogUrl}/{year}/{month}/{postSlug}.html`
 
@@ -115,16 +115,16 @@ All examples use these placeholders:
 
 **Example:**
 `https://example.blogspot.com/2024/01/my-post.html?showComment=1234567890#c1234567890`
-```
+
 
 ### Static Pages
-```markdown
+
 **Format:** `https://{blogUrl}/p/{pageSlug}.html`
 **Example:** `https://example.blogspot.com/p/about.html`
-```
+
 
 ### Labels/Tags
-```markdown
+
 **Format:** `https://{blogUrl}/search/label/{label}`
 
 **Parameters:**
@@ -136,10 +136,10 @@ All examples use these placeholders:
 
 **Example:**
 `https://example.blogspot.com/search/label/Tutorial?max-results=20&by-date=true`
-```
+
 
 ### Search
-```markdown
+
 **Format:** `https://{blogUrl}/search?q={query}`
 
 **Parameters:**
@@ -150,10 +150,10 @@ All examples use these placeholders:
 
 **Example:**
 `https://example.blogspot.com/search?q=python+tutorial&max-results=30`
-```
+
 
 ### Archives
-```markdown
+
 **Monthly Archive:**
 `https://{blogUrl}/{year}/{month}/`
 
@@ -162,19 +162,19 @@ All examples use these placeholders:
 
 **Yearly Archive:**
 `https://{blogUrl}/archive.html`
-```
+
 
 ### Profile Pages
-```markdown
+
 **Blogger Profile:**
 `https://www.blogger.com/profile/{profileId}`
 
 **Google Profile:**
 `https://profiles.google.com/{userId}`
-```
+
 
 ### Comment System
-```markdown
+
 **Comment Form:**
 `https://{blogUrl}/{year}/{month}/{postSlug}.html#comment-form`
 
@@ -183,7 +183,7 @@ All examples use these placeholders:
 
 **Manage Comments:**
 `https://www.blogger.com/comment-edit.g?blogID={blogId}&postID={postId}`
-```
+
 
 ---
 
@@ -211,7 +211,7 @@ All examples use these placeholders:
 ## 📡 Feed Endpoints (Atom/RSS)
 
 ### Posts Feeds
-```markdown
+
 **Default (Atom):**
 `https://{blogUrl}/feeds/posts/default`
 
@@ -226,10 +226,10 @@ All examples use these placeholders:
 
 **By Label:**
 `https://{blogUrl}/feeds/posts/default/-/{label}`
-```
+
 
 ### Comments Feeds
-```markdown
+
 **All Comments:**
 `https://{blogUrl}/feeds/comments/default`
 
@@ -241,19 +241,19 @@ All examples use these placeholders:
 
 **Full Feed (with post content):**
 `https://{blogUrl}/feeds/{postId}/comments/full`
-```
+
 
 ### Archive Feeds
-```markdown
+
 **By Year/Month:**
 `https://{blogUrl}/feeds/{year}/{month}/posts/default`
-```
+
 
 ### Search Feeds
-```markdown
+
 **Search Results:**
 `https://{blogUrl}/feeds/posts/default?q={query}`
-```
+
 
 ---
 
@@ -262,20 +262,20 @@ All examples use these placeholders:
 Base URL: `https://www.googleapis.com/blogger/v3/`
 
 ### Authentication
-```markdown
+
 **API Key:** `?key={apiKey}`
 **OAuth 2.0:** `Authorization: Bearer {access_token}`
-```
+
 
 ### Blogs
-```markdown
+
 GET /blogs/{blogId}
 GET /blogs/byurl?url={blogUrl}
 GET /users/{userId}/blogs
-```
+
 
 ### Posts
-```markdown
+
 GET    /blogs/{blogId}/posts
 GET    /blogs/{blogId}/posts/{postId}
 GET    /blogs/{blogId}/posts/search?q={query}
@@ -294,65 +294,65 @@ DELETE /blogs/{blogId}/posts/{postId}
 - labels={label1,label2}
 - status=draft|live|scheduled
 - view=ADMIN|AUTHOR|READER
-```
+
 
 ### Pages
-```markdown
+
 GET    /blogs/{blogId}/pages
 GET    /blogs/{blogId}/pages/{pageId}
 POST   /blogs/{blogId}/pages
 PUT    /blogs/{blogId}/pages/{pageId}
 PATCH  /blogs/{blogId}/pages/{pageId}
 DELETE /blogs/{blogId}/pages/{pageId}
-```
+
 
 ### Comments
-```markdown
+
 GET    /blogs/{blogId}/posts/{postId}/comments
 GET    /blogs/{blogId}/posts/{postId}/comments/{commentId}
 GET    /blogs/{blogId}/comments
 GET    /blogs/{blogId}/comments/{commentId}
 POST   /blogs/{blogId}/posts/{postId}/comments
 DELETE /blogs/{blogId}/comments/{commentId}
-```
+
 
 ### Users
-```markdown
+
 GET /users/{userId}
-```
+
 
 ### BlogUserInfos
-```markdown
+
 GET /users/{userId}/blogs/{blogId}
-```
+
 
 ### PostUserInfos
-```markdown
+
 GET /users/{userId}/blogs/{blogId}/posts
 GET /users/{userId}/blogs/{blogId}/posts/{postId}
-```
+
 
 ### PageViews
-```markdown
+
 GET /blogs/{blogId}/pageviews
 GET /blogs/{blogId}/pageviews?range={today|week|month|all}
-```
+
 
 ---
 
 ## 🔐 Authentication & Authorization
 
 ### OAuth 2.0 Scopes
-```markdown
+
 **Full access:**
 https://www.googleapis.com/auth/blogger
 
 **Read-only:**
 https://www.googleapis.com/auth/blogger.readonly
-```
+
 
 ### OAuth URLs
-```markdown
+
 **Authorization Endpoint:**
 https://accounts.google.com/o/oauth2/auth
   ?client_id={clientId}
@@ -367,10 +367,10 @@ https://oauth2.googleapis.com/token
 
 **Revoke Token:**
 https://oauth2.googleapis.com/revoke?token={token}
-```
+
 
 ### Dashboard Authentication
-```markdown
+
 **Login:**
 https://www.blogger.com/blogin.g?blogID={blogId}
 
@@ -379,14 +379,14 @@ https://www.blogger.com/logout.g
 
 **Switch Account:**
 https://www.blogger.com/add.g?blogID={blogId}
-```
+
 
 ---
 
 ## 🖼️ Media/Asset URLs
 
 ### Images
-```markdown
+
 **Blogger-Hosted Images:**
 https://blogger.googleusercontent.com/img/{blogId}/{imagePath}
 
@@ -401,10 +401,10 @@ https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE{hash}=s{size}
 - `=w320-h240`     # Width 320px, height 240px
 - `=s320-c`        # Cropped to square
 - `=s0`            # Original size
-```
+
 
 ### Icons & Assets
-```markdown
+
 **Favicon:**
 https://{blogUrl}/favicon.ico
 
@@ -416,14 +416,14 @@ https://www.blogger.com/static/{version}/{asset}
   - v1/widgets/...
   - v1/css/...
   - v1/js/...
-```
+
 
 ---
 
 ## 🛠️ Internal Dashboard URLs
 
 ### Posts Management
-```markdown
+
 **All Posts:**
 https://www.blogger.com/blogger.g?blogID={blogId}#allposts
 
@@ -435,19 +435,19 @@ https://www.blogger.com/blogger.g?blogID={blogId}#editor/target=post;postID={pos
 
 **Post Stats:**
 https://www.blogger.com/post-stats.g?blogID={blogId}&postID={postId}
-```
+
 
 ### Comments Management
-```markdown
+
 **All Comments:**
 https://www.blogger.com/blogger.g?blogID={blogId}#allcomments
 
 **Awaiting Moderation:**
 https://www.blogger.com/blogger.g?blogID={blogId}#comments-moderation
-```
+
 
 ### Settings
-```markdown
+
 **Basic Settings:**
 https://www.blogger.com/blogger.g?blogID={blogId}#settings
 
@@ -465,10 +465,10 @@ https://www.blogger.com/blogger.g?blogID={blogId}#settings-search
 
 **Custom Domain:**
 https://www.blogger.com/blogger.g?blogID={blogId}#settings-domain
-```
+
 
 ### Layout & Theme
-```markdown
+
 **Template Editor:**
 https://www.blogger.com/template-edit.g?blogID={blogId}
 
@@ -480,10 +480,10 @@ https://www.blogger.com/template-gallery.g?blogID={blogId}
 
 **Theme Preview:**
 https://www.blogger.com/template-preview.g?blogID={blogId}
-```
+
 
 ### Stats & Analytics
-```markdown
+
 **Overview:**
 https://www.blogger.com/stats.g?blogID={blogId}
 
@@ -492,14 +492,14 @@ https://www.blogger.com/stats-traffic-sources.g?blogID={blogId}
 
 **Audience:**
 https://www.blogger.com/stats-audience.g?blogID={blogId}
-```
+
 
 ---
 
 ## 💬 Comment System
 
 ### Anchors & Parameters
-```markdown
+
 **Comment Anchor:**
 #c{commentId}
   Example: #c1234567890123456789
@@ -513,10 +513,10 @@ https://{blogUrl}/{year}/{month}/{postSlug}.html#c{commentId}
 
 **Comment Pagination:**
 ?commentPage={pageNumber}
-```
+
 
 ### Comment Feeds by Type
-```markdown
+
 **Recent Comments:**
 https://{blogUrl}/feeds/comments/default
 
@@ -525,10 +525,10 @@ https://{blogUrl}/feeds/{postId}/comments/default
 
 **By Author:**
 https://{blogUrl}/feeds/comments/default?author={email}
-```
+
 
 ### Moderation Endpoints
-```markdown
+
 **Approve Comment:**
 https://www.blogger.com/comment-approve.g?blogID={blogId}&commentID={commentId}
 
@@ -537,14 +537,14 @@ https://www.blogger.com/comment-delete.g?blogID={blogId}&commentID={commentId}
 
 **Mark as Spam:**
 https://www.blogger.com/comment-spam.g?blogID={blogId}&commentID={commentId}
-```
+
 
 ---
 
 ## 🎨 Template Engine Data-Tags
 
 ### Blog-Level Tags
-```xml
+xml
 <!-- Basic Info -->
 <data:blog.title/>                    <!-- Blog title -->
 <data:blog.url/>                      <!-- Current page URL -->
@@ -575,10 +575,10 @@ https://www.blogger.com/comment-spam.g?blogID={blogId}&commentID={commentId}
 <!-- Stats -->
 <data:blog.pageviewCount/>            <!-- Total pageviews -->
 <data:blog.analyticsAccountNumber/>   <!-- Analytics ID -->
-```
+
 
 ### Post-Level Tags
-```xml
+xml
 <!-- Identification -->
 <data:post.id/>                       <!-- Numeric post ID -->
 <data:post.title/>                    <!-- Post title -->
@@ -620,20 +620,20 @@ https://www.blogger.com/comment-spam.g?blogID={blogId}&commentID={commentId}
 <!-- Ads -->
 <data:post.includeAds/>               <!-- true if ads enabled -->
 <data:post.adCode/>                   <!-- Ad code for this post -->
-```
+
 
 ### Page-Level Tags
-```xml
+xml
 <data:page.title/>                    <!-- Page title -->
 <data:page.url/>                      <!-- Page URL -->
 <data:page.id/>                       <!-- Numeric page ID -->
 <data:page.body/>                     <!-- Page content -->
 <data:page.timestamp/>                <!-- Creation timestamp -->
 <data:page.showMobileStyle/>          <!-- true if mobile style -->
-```
+
 
 ### Comment-Level Tags
-```xml
+xml
 <data:comment.id/>                    <!-- Comment ID -->
 <data:comment.body/>                  <!-- Comment content -->
 <data:comment.author/>                <!-- Author name -->
@@ -644,10 +644,10 @@ https://www.blogger.com/comment-spam.g?blogID={blogId}&commentID={commentId}
 <data:comment.isAdmin/>               <!-- true if admin comment -->
 <data:comment.isOwner/>               <!-- true if blog owner -->
 <data:comment.isSpam/>                <!-- true if marked spam -->
-```
+
 
 ### Widget & Layout Tags
-```xml
+xml
 <!-- Section -->
 <data:section.id/>                    <!-- Section ID -->
 <data:section.class/>                 <!-- CSS class -->
@@ -668,23 +668,23 @@ https://www.blogger.com/comment-spam.g?blogID={blogId}&commentID={commentId}
 <data:messages.postComment/>          <!-- "Post Comment" -->
 <data:messages.subscribeTo/>          <!-- "Subscribe to" -->
 <data:messages.viewBlog/>             <!-- "View blog" -->
-```
+
 
 ---
 
 ## 🧩 Widget & Integration URLs
 
 ### Follow by Email (FeedBurner)
-```markdown
+
 **Subscription:**
 https://feedburner.google.com/fb/a/mailverify?uri={feedName}&loc=en_US
 
 **FeedBurner Stats:**
 https://feedburner.google.com/fb/a/stats/feed/{feedUri}
-```
+
 
 ### Social Sharing
-```markdown
+
 **Share to Blogger:**
 https://www.blogger.com/share-post.g
   ?blogID={blogId}
@@ -696,10 +696,10 @@ mailto:?subject={title}&body={url}
 
 **Add to Google+:**
 https://plus.google.com/share?url={url}
-```
+
 
 ### Gadgets & Badges
-```markdown
+
 **Blogger Badge:**
 https://www.blogger.com/badge.g?blogID={blogId}
 
@@ -708,14 +708,14 @@ https://www.blogger.com/followers.g?blogID={blogId}
 
 **Newsreel Gadget:**
 https://www.blogger.com/newsreel.g
-```
+
 
 ---
 
 ## 📱 Mobile & Specialized URLs
 
 ### Mobile Views
-```markdown
+
 **Standard Mobile:**
 https://{blogUrl}/?m=1
 
@@ -724,10 +724,10 @@ https://{blogUrl}/?m=1&app=0
 
 **In-App Browser:**
 https://{blogUrl}/?m=1&app=1
-```
+
 
 ### AMP (Accelerated Mobile Pages)
-```markdown
+
 **AMP Version:**
 https://{blogUrl}/{year}/{month}/{postSlug}.amp.html
 
@@ -736,19 +736,19 @@ https://{blogUrl}/amp/{year}/{month}/{postSlug}
 
 **AMP Style:**
 https://{blogUrl}/amp_css/{timestamp}
-```
+
 
 ### Print Views
-```markdown
+
 **Print-Friendly:**
 https://{blogUrl}/{year}/{month}/{postSlug}.html?view=print
 
 **Print CSS:**
 https://{blogUrl}/print.css
-```
+
 
 ### App Deep Links
-```markdown
+
 **Android App:**
 intent://{blogUrl}/#Intent;package=com.google.android.apps.blogger;end
 
@@ -757,14 +757,14 @@ blogger://{blogUrl}/
 
 **Edit in App:**
 blogger://edit?blogId={blogId}&postId={postId}
-```
+
 
 ---
 
 ## 🔍 SEO & Metadata URLs
 
 ### Sitemaps
-```markdown
+
 **Main Sitemap:**
 https://{blogUrl}/sitemap.xml
 
@@ -779,19 +779,19 @@ https://{blogUrl}/sitemap-labels.xml
 
 **Archive Sitemap:**
 https://{blogUrl}/sitemap-archive.xml
-```
+
 
 ### Robots.txt
-```markdown
+
 **Standard:**
 https://{blogUrl}/robots.txt
 
 **Custom:**
 https://{blogUrl}/robots.txt?t={timestamp}
-```
+
 
 ### Search Metadata
-```markdown
+
 **OpenSearch Description:**
 https://{blogUrl}/opensearch.xml
 
@@ -800,20 +800,20 @@ https://{blogUrl}/manifest.json
 
 **Web App Manifest:**
 https://{blogUrl}/blogger.webmanifest
-```
+
 
 ### Structured Data
-```markdown
+
 **Blog JSON-LD:**
 https://{blogUrl}/feeds/posts/default?alt=json&callback=bloggerJSONCallback
-```
+
 
 ---
 
 ## 🌍 Domain Behavior
 
 ### Domain Types
-```markdown
+
 **Blogspot Domain:**
 https://{blogName}.blogspot.com/
 
@@ -827,10 +827,10 @@ https://{customDomain}/
 **HTTPS Enforcement:**
 - HTTP → HTTPS automatic redirect
 - HSTS preload for blogspot.com
-```
+
 
 ### Canonical URLs
-```markdown
+
 **Canonical Tag:**
 <link rel="canonical" href="https://{blogUrl}/{year}/{month}/{postSlug}.html" />
 
@@ -838,10 +838,10 @@ https://{customDomain}/
 <link rel="alternate" type="application/atom+xml" href="...">
 <link rel="alternate" type="application/rss+xml" href="...">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="...">
-```
+
 
 ### Redirect Patterns
-```markdown
+
 **WWW Handling:**
 - https://www.{blogUrl}/ → https://{blogUrl}/ (or vice versa based on settings)
 
@@ -851,14 +851,14 @@ https://{customDomain}/
 **Case Sensitivity:**
 - URLs are case-insensitive for blogspot.com
 - Custom domains follow server configuration
-```
+
 
 ---
 
 ## 🗃️ Legacy URLs
 
 ### AtomPub API (Deprecated but Functional)
-```markdown
+
 **Posts:**
 https://www.blogger.com/feeds/{blogId}/posts/default
 
@@ -867,19 +867,19 @@ https://www.blogger.com/feeds/{blogId}/{postId}/comments/default
 
 **With Auth:**
 https://{username}:{passwd}@www.blogger.com/feeds/{blogId}/posts/default
-```
+
 
 ### Old Comment System
-```markdown
+
 **Post Comment:**
 https://www.blogger.com/comment.g?blogID={blogId}&postID={postId}
 
 **Popup Comment:**
 https://www.blogger.com/comment-iframe.g?blogID={blogId}&postID={postId}
-```
+
 
 ### Export & Backup
-```markdown
+
 **Export Blog:**
 https://www.blogger.com/blog-export.g?blogID={blogId}
 
@@ -888,33 +888,33 @@ https://www.blogger.com/blog-import.g
 
 **Backup Template:**
 https://www.blogger.com/template-backup.g?blogID={blogId}
-```
+
 
 ### Old Template System
-```markdown
+
 **Classic Template:**
 https://{blogUrl}/?action=template&widgetType=BlogArchive&widgetId=...
 
 **Layouts Template:**
 https://www.blogger.com/layouts-edit.g?blogID={blogId}
-```
+
 
 ---
 
 ## ⚠️ Error Pages & Status
 
 ### HTTP Status Codes
-```markdown
+
 **200 OK** - Normal response
 **301 Moved Permanently** - Redirect (domain change, canonical)
 **302 Found** - Temporary redirect (mobile view, login)
 **404 Not Found** - Page doesn't exist
 **500 Internal Server Error** - Blogger system error
 **503 Service Unavailable** - Maintenance, rate limiting
-```
+
 
 ### Error Pages
-```markdown
+
 **404 Page:**
 https://{blogUrl}/404.html
 
@@ -926,10 +926,10 @@ https://www.blogger.com/access-denied.g
 
 **Blog Not Found:**
 https://www.blogger.com/blog-not-found.g
-```
+
 
 ### System Status
-```markdown
+
 **Status Page:**
 https://www.blogger.com/status.g
 
@@ -938,14 +938,14 @@ https://www.blogger.com/known-issues.g
 
 **Outage Report:**
 https://www.blogger.com/outage-report.g
-```
+
 
 ---
 
 ## 📊 JavaScript API & Widgets
 
 ### JSON Feeds
-```markdown
+
 **Posts JSON:**
 https://{blogUrl}/feeds/posts/default?alt=json
 
@@ -957,19 +957,19 @@ https://{blogUrl}/feeds/posts/default?alt=json&q={query}
 
 **Comments JSON:**
 https://{blogUrl}/feeds/comments/default?alt=json
-```
+
 
 ### Dynamic Views JSON
-```markdown
+
 **Posts for View:**
 https://www.blogger.com/feeds/{blogId}/posts/default
   ?alt=json
   &callback=__blogger_dynamic_views__.__callbacks__.posts
   &path={path}
-```
+
 
 ### Widget JavaScript
-```markdown
+
 **Blogger JS Library:**
 https://www.blogger.com/static/v1/jsbin/{filename}.js
 
@@ -978,44 +978,44 @@ https://www.blogger.com/render/{widgetType}?blogID={blogId}
 
 **Gadget JS:**
 https://www.blogger.com/gadgets/js/{gadgetId}
-```
+
 
 ---
 
 ## 🛡️ Cross-Origin & Security
 
 ### CORS Headers
-```markdown
+
 **Feeds:**
 Access-Control-Allow-Origin: *
 
 **API:**
 Access-Control-Allow-Origin: https://www.blogger.com
-```
+
 
 ### Content Security Policy
-```markdown
+
 **Default CSP:**
 default-src 'self' https://www.blogger.com
 img-src * data: https:
 script-src 'unsafe-inline' 'unsafe-eval' https: http:
 style-src 'unsafe-inline' https: http:
-```
+
 
 ### Security Headers
-```markdown
+
 **Blogspot.com:**
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-```
+
 
 ---
 
 ## 🛠️ Tools & Utilities
 
 ### Validation Tools
-```markdown
+
 **Template Validator:**
 https://www.blogger.com/template-validator.g
 
@@ -1024,10 +1024,10 @@ https://www.blogger.com/feeds/validate
 
 **HTML Validator:**
 https://www.blogger.com/html-validator.g
-```
+
 
 ### Development Tools
-```markdown
+
 **API Explorer:**
 https://developers.google.com/apis-explorer/#p/blogger/v3/
 
@@ -1036,10 +1036,10 @@ https://developers.google.com/oauthplayground/
 
 **API Console:**
 https://console.developers.google.com/apis/api/blogger.googleapis.com
-```
+
 
 ### Diagnostic URLs
-```markdown
+
 **Blog Info:**
 https://{blogUrl}/?d=info
 
@@ -1048,14 +1048,14 @@ https://{blogUrl}/?d=debug
 
 **Show Variables:**
 https://{blogUrl}/?showvars=1
-```
+
 
 ---
 
 ## ⚠️ Known Limitations
 
 ### API Limitations
-```markdown
+
 **Rate Limits:**
 - 500 requests per 100 seconds per user (OAuth)
 - 10,000 requests per 100 seconds per project (API key)
@@ -1069,10 +1069,10 @@ https://{blogUrl}/?showvars=1
 - Post body: 1MB
 - Image upload: 20MB
 - Comment body: 4096 characters
-```
+
 
 ### Platform Limitations
-```markdown
+
 **Slug Generation:**
 - Post slugs auto-generated from title
 - Cannot be manually specified via API
@@ -1087,10 +1087,10 @@ https://{blogUrl}/?showvars=1
 - Threaded comments depth: 5 levels
 - Comments per post: Unlimited in practice
 - Comment moderation: 30 days auto-close
-```
+
 
 ### Browser Compatibility
-```markdown
+
 **Supported Browsers:**
 - Chrome (latest 2 versions)
 - Firefox (latest 2 versions)
@@ -1100,7 +1100,7 @@ https://{blogUrl}/?showvars=1
 **IE Compatibility:**
 - IE 11 (limited support)
 - Dynamic views not supported in IE
-```
+
 
 ---
 
