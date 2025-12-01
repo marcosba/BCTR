@@ -3,35 +3,6 @@
 *A definitive encyclopedia of Blogger's public URLs, API endpoints, feeds, template system, internal routes, and undocumented patterns.*
 
 ---
-
-## 📋 Table of Contents
-
-1. [Overview](#-overview)
-2. [Placeholder Conventions](#-placeholder-conventions)
-3. [Public URLs](#-public-urls)
-4. [URL Parameters](#-url-parameters)
-5. [Feed Endpoints (Atom/RSS)](#-feed-endpoints-atomrss)
-6. [Blogger API v3](#-blogger-api-v3)
-7. [Authentication & Authorization](#-authentication--authorization)
-8. [Media/Asset URLs](#-mediaasset-urls)
-9. [Internal Dashboard URLs](#-internal-dashboard-urls)
-10. [Comment System](#-comment-system)
-11. [Template Engine Data-Tags](#-template-engine-data-tags)
-12. [Widget & Integration URLs](#-widget--integration-urls)
-13. [Mobile & Specialized URLs](#-mobile--specialized-urls)
-14. [SEO & Metadata URLs](#-seo--metadata-urls)
-15. [Domain Behavior](#-domain-behavior)
-16. [Legacy URLs](#-legacy-urls)
-17. [Error Pages & Status](#-error-pages--status)
-18. [JavaScript API & Widgets](#-javascript-api--widgets)
-19. [Cross-Origin & Security](#-cross-origin--security)
-20. [Tools & Utilities](#-tools--utilities)
-21. [Known Limitations](#-known-limitations)
-22. [Contributing](#-contributing)
-23. [License](#-license)
-
----
-
 ## 📖 Overview
 
 This document is the **most comprehensive technical reference** for the Blogger platform, compiled from:
